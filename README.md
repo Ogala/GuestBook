@@ -7,4 +7,4 @@
 3. visit `http://localhost:5000` in your browser to see runnig app
 
 # Precondition
-  Docker is intalled
+  `Docker` is intalled
