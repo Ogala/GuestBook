@@ -1,18 +1,37 @@
-version: "3"
+version: '3'
+
 services:
   web:
-    image: ogalaemmanuel/devops-assignment:guestbook
-    deploy:
-      replicas: 5
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
-      restart_policy:
-        condition: on-failure
+    image: ogalaemmanuel/devops-assignment:part2
     ports:
       - "3000:3000"
     networks:
       - webnet
+    links:
+      - redis-master
+      - redis-slave
+    depends_on:
+      - redis-master
+      - redis-slave
+  redis-master:
+    image: redis:4.0-alpine
+    expose:
+      - 6379
+    entrypoint:
+      - redis-server
+      - --loglevel
+      - verbose
+
+  redis-slave:
+    image: redis:4.0-alpine
+    expose:
+      - 6379
+    entrypoint:
+      - redis-server
+      - --slaveof
+      - redis-master
+      - "6379"
+      - --loglevel
+      - verbose
 networks:
   webnet:
