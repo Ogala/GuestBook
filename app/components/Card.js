@@ -30,7 +30,7 @@ const styles = {
         flexDirection: "column",
         justifyContent: "space-between",
         backgroundColor: "ghostwhite",
-        margin: 5,
+        margin: 20,
         minWidth: 468,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 4},

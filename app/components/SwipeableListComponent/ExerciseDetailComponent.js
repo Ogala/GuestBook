@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import Card from "../Card";
 import CardSection from "../Cardsection";
 
@@ -17,12 +17,14 @@ const ExerciseDetail = ({ album }) => {
     return(
             
             <CardSection>
-                <View style={iconContainerStyle}>
-                    <Icon 
+                <View style={exerciseIndicator}>
+                <Image source={require("../../util/mat_exercises/icon_mat_3_lg.png")} style={{flex:1, width:undefined, height:undefined, resizeMode:"contain"}} />
+
+                   {/*  <Icon 
                         containerStyle={exerciseIndicator}
                         name="dumbbell"
                         type="material-community" 
-                    />
+                    /> */}
                 </View>
                 <View style={exerciseDetail}> 
                 <Text style={exDetailTextStyle}>{title}</Text>
@@ -46,10 +48,13 @@ const styles = {
         fontFamily: "Arial",
     },
     exerciseIndicator: {
-        justifyContent: "space-around",
-        height: 50,
-        width: 50,
-        margin: 4
+        flexDirection: "row",
+        // justifyContent: "center",
+        // alignItems: "center",
+        height: "100%",
+        width: 70,
+        marginLeft: 15,
+        marginRight: 15
     },
     iconContainerStyle: {
         justifyContent: "center",

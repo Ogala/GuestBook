@@ -30,7 +30,9 @@ export default class premiumtimes extends Component{
             <View style={{flex: 1, flexDirection: "row"}}>
               <HeaderComponent />
             </View>
-            <View style={{flex: 5}}>
+            <View style={{flex: 5, flexDirection: "row"}}>
+        
+              <BaseListComponent />
               <BaseListComponent />
             </View>
         </View>
