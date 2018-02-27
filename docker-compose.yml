@@ -1,0 +1,33 @@
+version: "3.5"
+services:
+  http-server:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - redis-master
+      - redis-slave
+    depends_on:
+      - redis-master
+      - redis-slave
+
+  redis-master:
+    image: redis:4.0.8
+    expose:
+      - 6379
+    entrypoint:
+      - redis-server
+      - --loglevel
+      - verbose
+
+  redis-slave:
+    image: redis:4.0.8
+    expose:
+      - 6379
+    entrypoint:
+      - redis-server
+      - --slaveof
+      - redis-master
+      - "6379"
+      - --loglevel
+      - verbose
