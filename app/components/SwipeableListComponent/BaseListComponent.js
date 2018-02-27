@@ -1,71 +1,35 @@
 import React, { Component } from 'react';
 import {FlatList, StyleSheet, Text, View,  TouchableOpacity } from 'react-native';
 import { List, ListItem } from "react-native-elements";
+import axios from 'axios';
+import ExerciseDetail from "./ExerciseDetailComponent";
+import Card from "../Card";
 
 class BaseListComponent extends Component {
+    state = { 
+            albums: []
+        };
 
-    constructor(props){
-        super(props);
-
-        this.state={ };
+    componentWillMount() {
+        axios.get("https://rallycoding.herokuapp.com/api/music_albums")
+        .then(response => this.setState({albums: response.data}));
+    }
+    renderAlbums(){
+       return this.state.albums.map(album => 
+            <ExerciseDetail key={album.title} album={album} />
+        );
     }
     
-    
     render(){
+        console.log(this.state);
         return(
-            <View style={styles.container}>
-            <FlatList
-              data={[
-                {exercise: {
-                    title: "Breathing",
-                    level: 1
-                }},
-                {exercise: {
-                    title: "Impring and Release",
-                    level: 1
-                }},
-                {exercise: {
-                    title: "Hip Release",
-                    level: 3
-                }},
-                {exercise: {
-                    title: "Head Nods",
-                    level: 2
-                }},
-                {exercisekey: {
-                    title: "Ab Prep",
-                    level: 3
-                }},
-                {exercise: {
-                    title: "Half roll Back",
-                    level: 4
-                }},
-                {exercise: {
-                    title: "Spine Twist",
-                    level: 4
-                }},
-                {exercise: {
-                    title: "Obliques",
-                    level: 5
-                }},
-              ]}
-              renderItem={({item}) => <Text style={styles.item}>{item.title}</Text>}
-            />
-          </View>
+            <Card headerTitle={<Text>Workout Plan </Text>} footer={<Text> Write a note ... </Text>}>
+                {this.renderAlbums()}
+            </Card>
         )
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-     flex: 1,
-     paddingTop: 22
-    },
-    item: {
-      padding: 10,
-      fontSize: 18,
-      height: 44,
-    },
-  })
+
 // skip this line if using Create React Native App
 export default BaseListComponent;

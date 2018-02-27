@@ -14,16 +14,14 @@ import {
   Image
 } from 'react-native';
 import { Avatar, Header } from 'react-native-elements';
-import {HorizontalLine, Back} from "../../util/icons";
+import HeaderNav from "../HeaderNavComponent/headerNav";
+
 
 export default class HeaderComponent extends Component{
     render(){
       return(
         <View style={styles.headerContainer}>
-            <View style={styles.stateContainer}>
-                <Back />
-                <Text style={styles.stateText}>Client List </Text>
-            </View>
+            <HeaderNav navigateTo={"Analysis"} />
             <View style={styles.logoContainer}> 
                 <View style={styles.indexLogoContainer}> 
                 <Image source={require('./img/logo.png')} style={{flex:0.9, width:undefined, height:undefined, resizeMode:"contain"}} />
@@ -60,14 +58,7 @@ headerContainer: {
     marginTop: 18
 
 },
-stateContainer: {
-    flex: 1,
-    flexDirection: "row",
-    height: 72,
-    justifyContent: "flex-start",
-    paddingLeft: 31,
-    alignItems: "center"
-},
+
 logoContainer: {
     flex: 2,
     flexDirection: "row",
@@ -109,12 +100,6 @@ headerTitle: {
     textAlign: "left",
     textAlignVertical: "center",
     justifyContent: "space-around"
-},
-stateText: {
-    fontSize: 25,
-    marginLeft: 15,
-    marginRight: 15,
-    color: "#4C527C",
 },
 userPic: {
     width: 72,

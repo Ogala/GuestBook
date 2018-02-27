@@ -27,8 +27,12 @@ export default class premiumtimes extends Component{
     render(){
       return(
         <View style={{flex: 1, flexDirection:"column", alignItems:"center"}}>
-            <HeaderComponent />
-            <BaseListComponent />
+            <View style={{flex: 1, flexDirection: "row"}}>
+              <HeaderComponent />
+            </View>
+            <View style={{flex: 5}}>
+              <BaseListComponent />
+            </View>
         </View>
       );
     }
