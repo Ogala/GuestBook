@@ -12,8 +12,12 @@ import {
   Text,
   View
 } from 'react-native';
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducers from "./app/reducers";
 import HeaderComponent from "./app/components/HeaderComponent/headerComponent";
-import BaseListComponent from "./app/components/SwipeableListComponent/BaseListComponent"
+import BaseListComponent from "./app/components/SwipeableListComponent/BaseListComponent";
+import ExerciseList from "./app/components/ExerciseList";
 
 /* Nice to know. 
 const instructions = Platform.select({
@@ -26,16 +30,17 @@ const instructions = Platform.select({
 export default class premiumtimes extends Component{
     render(){
       return(
-        <View style={{flex: 1, flexDirection:"column", alignItems:"center"}}>
-            <View style={{flex: 1, flexDirection: "row"}}>
-              <HeaderComponent />
-            </View>
-            <View style={{flex: 5, flexDirection: "row"}}>
-        
-              <BaseListComponent />
-              <BaseListComponent />
-            </View>
-        </View>
+        <Provider store={createStore(reducers)}>
+          <View style={{flex: 1, flexDirection:"column", alignItems:"center"}}>
+              <View style={{flex: 1, flexDirection: "row"}}>
+                <HeaderComponent />
+              </View>
+              <View style={{flex: 5, flexDirection: "row"}}>
+                <ExerciseList />
+                <BaseListComponent />                
+              </View>
+          </View>
+        </Provider>
       );
     }
 }

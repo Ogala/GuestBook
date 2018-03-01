@@ -6,7 +6,6 @@ import CardSection from "../Cardsection";
 import { Icon } from 'react-native-elements';
 
 const ExerciseDetail = ({ album }) => {
-
     const { title, artist } = album;
     const { 
         exerciseDetail, 
