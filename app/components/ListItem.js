@@ -39,11 +39,10 @@ const styles = {
         color: "#4c527c",
         fontWeight: "bold",
         fontFamily: "Arial",
+        alignSelf: "baseline"
     },
     exerciseIndicator: {
         flexDirection: "row",
-        // justifyContent: "center",
-        // alignItems: "center",
         height: "100%",
         width: 70,
         marginLeft: 15,
