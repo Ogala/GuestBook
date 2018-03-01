@@ -3,27 +3,19 @@ import { connect } from "react-redux";
 import { View, Text, FlatList } from "react-native";
 import ListItem from "./ListItem";
 import Card from "./Card";
-import ExerciseDetail from "../components/SwipeableListComponent/ExerciseDetailComponent";
 
-class ExerciseList extends Component {
+class WorkOutPlan extends Component {
     componentWillMount(){
         exerciseData = this.props.dataToShow;
     }
-    renderListItem(item){
-         
-        return(
-            <ListItem exercise={item} />
-            
-        );
-    }
+    
     renderExercises(){
        return(
         <FlatList 
             data={exerciseData}
-            keyExtractor={ (item) => item.id }
+            keyExtractor={ (item) => item.id.toString() }
             renderItem={({ item }) => (
-                
-                this.renderListItem( item )
+                <ListItem exercise={item} />
                 )}
         />
         );
@@ -45,4 +37,4 @@ const mapStateToProps = state => {
 
 };
 
-export default connect(mapStateToProps)(ExerciseList);
+export default connect(mapStateToProps)(WorkOutPlan);

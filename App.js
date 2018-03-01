@@ -17,7 +17,7 @@ import { createStore } from "redux";
 import reducers from "./app/reducers";
 import HeaderComponent from "./app/components/HeaderComponent/headerComponent";
 import BaseListComponent from "./app/components/SwipeableListComponent/BaseListComponent";
-import ExerciseList from "./app/components/ExerciseList";
+import WorkOutPlan from "./app/components/WorkoutPlan";
 
 /* Nice to know. 
 const instructions = Platform.select({
@@ -36,7 +36,7 @@ export default class premiumtimes extends Component{
                 <HeaderComponent />
               </View>
               <View style={{flex: 5, flexDirection: "row"}}>
-                <ExerciseList />
+                <WorkOutPlan />
                 <BaseListComponent />                
               </View>
           </View>

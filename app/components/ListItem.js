@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Image, View, Text } from "react-native";
 import CardSection from "./Cardsection";
 
-
-
 const ListItem = ({ exercise }) => {
     const {title, level } = exercise;
     const {
@@ -11,6 +9,9 @@ const ListItem = ({ exercise }) => {
         exerciseDetail,
         exDetailTextStyle 
     } = styles;   
+    /**
+     * When we can fetch data from server, we will replace the icon uri with each exercise's uri
+     */
     return(
         <CardSection style={{flex:1}}>
             <View style={exerciseIndicator}>
@@ -19,7 +20,7 @@ const ListItem = ({ exercise }) => {
 
             <View style={exerciseDetail}> 
                 <Text style={exDetailTextStyle}>{title}</Text>
-                <Text>{level}</Text>
+                <Text style={{marginTop: 0, fontSize: 16 }}>{level}</Text>
             </View>
     
         </CardSection>
@@ -30,7 +31,8 @@ const ListItem = ({ exercise }) => {
 const styles = {
     exerciseDetail: {
         flexDirection: "column",
-        justifyContent: "space-around"
+        justifyContent: "space-around",
+        alignItems: "flex-start"
     },
     exDetailTextStyle:{
         fontSize: 28,
