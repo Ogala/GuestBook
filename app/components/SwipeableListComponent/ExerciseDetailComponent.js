@@ -3,7 +3,6 @@ import { View, Text, Image } from "react-native";
 import Card from "../Card";
 import CardSection from "../Cardsection";
 
-import { Icon } from 'react-native-elements';
 
 const ExerciseDetail = ({ album }) => {
     const { title, artist } = album;
@@ -17,17 +16,11 @@ const ExerciseDetail = ({ album }) => {
             
             <CardSection>
                 <View style={exerciseIndicator}>
-                <Image source={require("../../util/mat_exercises/icon_mat_3_lg.png")} style={{flex:1, width:undefined, height:undefined, resizeMode:"contain"}} />
-
-                   {/*  <Icon 
-                        containerStyle={exerciseIndicator}
-                        name="dumbbell"
-                        type="material-community" 
-                    /> */}
+                    <Image source={require("../../util/mat_exercises/icon_mat_3_lg.png")} style={{flex:1, width:undefined, height:undefined, resizeMode:"contain"}} />
                 </View>
                 <View style={exerciseDetail}> 
-                <Text style={exDetailTextStyle}>{title}</Text>
-                <Text>{artist}</Text>
+                    <Text style={exDetailTextStyle}>{title}</Text>
+                    <Text>{artist}</Text>
                 </View>
                 
             </CardSection>

@@ -8,7 +8,7 @@ import {
   Image
 } from 'react-native';
 import { Avatar, Header } from 'react-native-elements';
-import {HorizontalLine, Back} from "../../util/icons";
+import { Back} from "../../util/icons";
 
 const HeaderNav = (props) => {
     // const styles = {stateContainer, stateText};

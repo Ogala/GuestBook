@@ -18,6 +18,7 @@ import reducers from "./app/reducers";
 import HeaderComponent from "./app/components/HeaderComponent/headerComponent";
 import BaseListComponent from "./app/components/SwipeableListComponent/BaseListComponent";
 import WorkOutPlan from "./app/components/WorkoutPlan";
+import TestSwipeRow from "./app/components/SwipeableListComponent/testSwipeRow"
 
 /* Nice to know. 
 const instructions = Platform.select({
