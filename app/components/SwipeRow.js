@@ -47,7 +47,7 @@ class SwipeRow extends Component {
                 ]} />
               </TouchableOpacity>
               <TouchableOpacity style={[styles.button]} onPress={this.onButtonPress.bind(this, 'snooze')}>
-                <Animated.Image source={require("../util/img/icon-clock.png")} style={
+                <Animated.Image source={require("../util/img/ic_info_outline_white_48pt.png")} style={
                   [styles.buttonImage, {
                     opacity: this._deltaX.interpolate({
                       inputRange: [-75, -50],

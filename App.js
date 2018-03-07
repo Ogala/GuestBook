@@ -18,7 +18,7 @@ import reducers from "./app/reducers";
 import HeaderComponent from "./app/components/HeaderComponent/headerComponent";
 import BaseListComponent from "./app/components/SwipeableListComponent/BaseListComponent";
 import WorkOutPlan from "./app/components/WorkoutPlan";
-import TestSwipeRow from "./app/components/SwipeableListComponent/testSwipeRow"
+import SearchComponent from "./app/components/SearchComponent"
 
 /* Nice to know. 
 const instructions = Platform.select({
@@ -36,6 +36,9 @@ export default class premiumtimes extends Component{
               <View style={{flex: 1, flexDirection: "row"}}>
                 <HeaderComponent />
               </View>
+              
+                <SearchComponent />
+             
               <View style={{flex: 5, flexDirection: "row"}}>
                 <WorkOutPlan />
                 <BaseListComponent />                

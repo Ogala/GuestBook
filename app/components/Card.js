@@ -57,8 +57,8 @@ const styles = {
         backgroundColor: "#ffffff",
         borderTopWidth: 1,
         borderColor: "#CBCBCB",
-        alignItems: "center",
-        paddingLeft: 20
+        alignItems: "stretch",
+        
     },
     titleTextStyle: {
         fontSize: 36,

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { View, Text, FlatList } from "react-native";
 import ListItem from "./ListItem";
 import Card from "./Card";
+import SearchComponent from "./SearchComponent";
 
 
 class WorkOutPlan extends Component {
@@ -26,7 +27,9 @@ class WorkOutPlan extends Component {
 
     render(){
         return(
-            <Card headerTitle={<Text>Workout Plan </Text>} footer={<Text> Write a note ... </Text>}>
+            <Card 
+                headerTitle={<Text>Workout Plan </Text>} 
+                footer={<SearchComponent />}>
                 {this.renderExercises()}
             </Card>
         );
